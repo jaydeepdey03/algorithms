@@ -35,7 +35,7 @@ public:
     int findTargetSumWays(vector<int>& nums, int target) {
         int sum = 0;
         for(auto i:nums)sum+=i;
-        if(sum<abs(target) || (sum+target)%2 != 0)
+        if(sum<abs(target) || (sum+target)%2 != 0 || sum<target || ((sum+target)/2) < 0)
             return 0;
         return countSumWithGivenSum(nums, target);
     }
