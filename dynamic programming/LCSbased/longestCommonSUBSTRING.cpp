@@ -1,6 +1,5 @@
 class Solution{
     public:
-    
     int longestCommonSubstr (string x, string y, int n, int m)
     {
         // initialization
