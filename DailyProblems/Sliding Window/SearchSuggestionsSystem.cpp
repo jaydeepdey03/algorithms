@@ -33,3 +33,5 @@ public:
         return ans;
     }
 };
+
+// efficient solution: Trie Data Structure
