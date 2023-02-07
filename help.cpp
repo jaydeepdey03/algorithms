@@ -1,80 +1,42 @@
-// #include <iostream>
-// #include <vector>
-// #include <map>
-// #include <climits>
-
-// using namespace std;
-
-// bool cmp(pair<string, int> &a,
-//          pair<string, int> &b)
-// {
-//     return a.second < b.second;
-// }
-
-// int main()
-// {
-//     long long x;
-//     vector<int> tube;
-//     vector<int> res;
-
-//     while (1)
-//     {
-//         cin >> x;
-//         if (x == -1)
-//             break;
-
-//         if (x == 1)
-//         {
-//             int a;
-//             cin >> a;
-//             tube.push_back(a);
-//         }
-//         else
-//         {
-//             int max = INT_MIN;
-//             int indexmin = INT_MIN;
-//             map<int, int> map1;
-//             int eler;
-//             for (int i = 0; i < tube.size(); i++)
-//             {
-//                 map1[tube[i]]++;
-//             }
-//             for (int i = 0; i < tube.size(); i++)
-//             {
-//                 int a = tube[i];
-//                 auto itr = map1.find(a);
-//                 if (itr->second <= indexmin)
-//                 {
-
-//                     indexmin = i;
-//                 }
-//             }
-//             res.push_back(tube[indexmin]);
-//             tube.erase(tube.begin() + indexmin);
-//             map1[tube[indexmin]]--;
-//         }
-//     }
-//     for (int i = 0; i < res.size(); i++)
-//         cout << res[i] << " ";
-
-//     return 0;
-// }
-
-
-
 #include <iostream>
-#include <vector>
-
+#include<vector>
 using namespace std;
-
-int solve(vector<vector<int>> &arr){
-    for(int i = 0; i<arr.size(); i++){
-        
-    }
-}
 
 int main()
 {
+    vector<string>pixels;
+    pixels.push_back("1010");
+    pixels.push_back("0101");
+    pixels.push_back("1010");
+    for(int i=0;i<pixels.size();i++)
+    {
+        for(int j=0;j<4;j++)
+        {
+            int dsum1=0;
+            int dsum0=0;
+            int rsum1=0;
+            int rsum0=0;
+            cout<<pixels[0][0]<<endl;
+            for(int k=j;k<pixels.size();k++)
+            {
+                if(pixels[k][i]=='1')
+                {
+                    dsum1+=1;
+                }
+                dsum0+=1;
+            }
+            for(int k=j;k<4;k++)
+            {
+                if(pixels[i][k]=='1')
+                {
+                    rsum1+=1;
+                }
+                rsum0+=1;
+            }
+            cout<<(rsum1+dsum1)-(rsum0+dsum0)<<endl;
+
+        }
+    }
     
     return 0;
 }
